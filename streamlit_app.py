@@ -114,8 +114,7 @@ elif selected_option == "Profit Analysis":
         (df["Region"] if selected_region == "All" else df["Region"] == selected_region) &
         (df["Country"] if selected_country == "All" else df["Country"] == selected_country) &
         (df["State"] if selected_state == "All" else df["State"] == selected_state) &
-        (df["Sub-Category"] if selected_sub_category == "All" else df["Sub-Category"] == selected_sub_category)
-    ]
+        (df["Sub-Category"] if selected_sub_category == "All" else df["Sub-Category"] == selected_sub_category)]
 
     st.subheader("Profit Trend over Time")
     st.line_chart(filtered_profit.set_index("Order Date")["Profit"], color='#357b72')
@@ -206,4 +205,3 @@ elif selected_option == "Product Insights":
     plt.ylabel('Sub-Category')
     # Show heatmap in Streamlit
     st.pyplot(plt)
-
